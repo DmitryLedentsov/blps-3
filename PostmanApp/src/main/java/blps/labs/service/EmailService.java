@@ -27,7 +27,7 @@ public class EmailService {
             msg.setSubject("Отзыв Litres");
             String text = String.format("Здравствуйте, %s!\n\nВаш отзыв №%d на книгу %s успешно добавлен.\n" +
                             "Он будет виден другим пользователям после того, как пройдёт модерацию.\n\n" +
-                            "С уважением, абоба.",
+                            "С уважением, Litres.",
                     reviewMessage.getName(), reviewMessage.getReviewId(), reviewMessage.getCarModel());
             msg.setText(text);
             javaMailSender.send(msg);
@@ -47,7 +47,7 @@ public class EmailService {
             String conclusion = reviewMessage.isApproved() ? "Теперь он опубликован и может быть виден другим пользователям сообщества.\n\n"
                     : "К сожалению, он не удовлетворяет правилам сообщества, попробуйте его отредактировать перед следующей отправкой.\n\n";
             String moderMessage = reviewMessage.getMessage() != null ? String.format("Сообщение от модератора:\n%s.\n\n", reviewMessage.getMessage()) : "";
-            String footer = "С уважением";
+            String footer = "С уважением, Litres";
             String text = firstPart + conclusion + moderMessage + footer;
             msg.setText(text);
             javaMailSender.send(msg);
