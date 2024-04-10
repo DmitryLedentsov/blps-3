@@ -1,4 +1,4 @@
-package blps.labs.message.rabbitmq;
+package blps.labs.message.sender;
 
 import blps.labs.message.model.AddReviewMessage;
 import blps.labs.message.model.CheckReviewMessage;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
-public class RabbitMQSender {
+public class Sender {
     private final RabbitTemplate rabbitTemplate;
     private final Exchange appExchange;
     //@Value("${rabbitmq.add-review-routingKey}")
@@ -21,7 +21,7 @@ public class RabbitMQSender {
     //@Value("${rabbitmq.send-spam-routingKey}")
     private String sendSpamRoutingKey = "sendSpamRoutingKey";
 
-    public RabbitMQSender(RabbitTemplate rabbitTemplate, Exchange appExchange) {
+    public Sender(RabbitTemplate rabbitTemplate, Exchange appExchange) {
         this.rabbitTemplate = rabbitTemplate;
         this.appExchange = appExchange;
     }

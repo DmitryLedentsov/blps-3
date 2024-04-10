@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-BlpsLabApplication<Blps_Lab>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "blps.labs.BlpsLabApplication",
+            "projectName": "Blps_Lab",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-PostmanApplication<Blps_Lab-Postman>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "blps.labs.PostmanApplication",
+            "projectName": "Blps_Lab-Postman",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

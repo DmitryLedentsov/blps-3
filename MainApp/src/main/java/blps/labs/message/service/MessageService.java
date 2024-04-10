@@ -6,7 +6,7 @@ import blps.labs.message.model.AddReviewMessage;
 import blps.labs.message.model.CheckReviewMessage;
 import blps.labs.message.model.SpamMessage;
 import blps.labs.message.model.SpamMessageUnit;
-import blps.labs.message.rabbitmq.RabbitMQSender;
+import blps.labs.message.sender.Sender;
 import blps.labs.service.ReviewService;
 import blps.labs.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -20,12 +20,12 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 public class MessageService {
-    private final RabbitMQSender rabbitMQSender;
+    private final Sender rabbitMQSender;
     private final UserService userService;
     private final ReviewService reviewService;
 
     @Autowired
-    public MessageService(RabbitMQSender rabbitMQSender, UserService userService, ReviewService reviewService) {
+    public MessageService(Sender rabbitMQSender, UserService userService, ReviewService reviewService) {
         this.rabbitMQSender = rabbitMQSender;
         this.userService = userService;
         this.reviewService = reviewService;
